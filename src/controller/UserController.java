@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import service.user.DeleteCheck;
+import service.user.EmailCheck;
 import service.user.IDCheck;
 import service.user.Login;
 import service.user.Logout;
@@ -73,7 +74,7 @@ public class UserController extends HttpServlet {
 			break;
 			
 		case "/emailCheck.do" :
-			new NicknameCheck().command(request, response);
+			new EmailCheck().command(request, response);
 			break;
 			
 		case "/sendEmail.do" :

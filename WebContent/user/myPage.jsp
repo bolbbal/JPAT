@@ -53,7 +53,7 @@
 				  <div class="form-group text-center">
 				  	<input type="hidden">
 				    <div class="text-center">
-				      <button type="submit" class="btn btn-default" name="submit" id="submit">登録</button>
+				      <button type="submit" class="btn btn-default" name="submit" id="submit">保存</button>
 				      <button class="btn btn-default" name="cancel" id="cancel">退会</button>
 				    </div>
 				  </div>
@@ -106,6 +106,7 @@
 						if(data.result === "possible") {
 							if($("#nickname").val() != "") {
 								$("#nicknameMsg").html("<span style='color:#0f0;'>このニックネ―ムは使用できます</sapn>");
+								nicknameChk = 1;
 							} 
 						} else if(data.result === "impossible") {
 							if($("#nickname").val() != "") {
@@ -248,23 +249,27 @@
 		            dataType: 'json',
 		            success: function(data) {
 		                if (data.result == "success") {
-		                    // 비밀번호 확인 후 게시글 삭제 요청
-		                    $.ajax({
-		                        type: 'post',
-		                        url: '/users/delete.do',
-		                        data: { 'userIdx': '${sessionScope.user.userIdx}' },
-		                        dataType: 'json',
-		                        success: function(deleteData) {
-		                            if (deleteData.result == "success") {
-		                                alert("退会が完了しました");
-		                                $("#myModal").modal('hide'); // 모달 닫기
-		                                location.href="/";
+		                	if (confirm("本当に退会しますか？")) { 
+		                        $.ajax({
+		                            type: 'post',
+		                            url: '/users/delete.do',
+		                            data: { 'userIdx': '${sessionScope.user.userIdx}' },
+		                            dataType: 'json',
+		                            success: function(deleteData) {
+		                                if (deleteData.result == "success") {
+		                                    alert("退会が完了しました");
+		                                    $("#myModal").modal('hide'); // 모달 닫기
+		                                    location.href = "/";
+		                                }
+		                            },
+		                            error: function() {
+		                                alert("エラーが発生しました。再度お試しください");
 		                            }
-		                        },
-		                        error: function() {
-		                            alert("エラーが発生しました。再度お試しください");
-		                        }
-		                    });
+		                        });
+		                    } else {
+		                        // 취소를 누른 경우
+		                        $("#myModal").modal('hide');
+		                    }
 		                } else if (data.result == "fail") {
 		                    $("#deletePasswordMsg").html("<span style='color:#f00;'>パスワード確認してください</span>");
 		                    return;

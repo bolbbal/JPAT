@@ -61,13 +61,13 @@
 	            </tr>
 	            <tr id="extra-inputs-4" style="display: none;">
 	                <th>Lyrics</th>
-	                <td colspan="3"><textarea name="lyrics" class="recommend-info">${suggestModify.lyrics}</textarea></td>
+	                <td colspan="3"><textarea name="lyrics" class="write-contents">${suggestModify.lyrics}</textarea></td>
 	            </tr>
     		 </table>
     		 <div class="form-group text-right">
 				    <div class="text-right">
 				      <button type="button" class="btn btn-default" onClick="location.href='/posts/list.do';">キャンセル</button>
-				      <button type="submit" class="btn btn-default">書き込み</button>
+				      <button type="submit" class="btn btn-default">保存</button>
 				    </div>
 			 </div>
     	</form>

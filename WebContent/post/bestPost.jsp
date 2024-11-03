@@ -58,36 +58,36 @@
 		<a href="/posts/write.do"><button class="btn btn-default text-right" type="submit">書き込み</button></a>
 	</div>
 	<div class="container text-center">
-		<nav aria-label="Page navigation" style="display: inline-block">
+		<nav aria-label="Page navigation" class="paging">
 		  <ul class="pagination">
 		  	<c:if test="${page.prev }">
 		    <li>
-		      <a href="?pageNum=1" aria-label="Previous">
-		        <span class="material-symbols-outlined">keyboard_double_arrow_left</span>
+		      <a href="?pageNum=1&type=${page.cri.type}&keyword=${page.cri.keyword}" aria-label="Previous">
+		        <i class="fa  fa-angle-double-left"></i>
 		      </a>
 		    </li>
 		    </c:if>
 		    <c:if test="${page.cri.pageNum != 1 }">
 		    <li>
-		      <a href="?pageNum=${page.cri.pageNum-1 }" aria-label="Previous">
-		        <span class="material-symbols-outlined">keyboard_arrow_left</span>
+		      <a href="?pageNum=${page.cri.pageNum-1 }&type=${page.cri.type}&keyword=${page.cri.keyword}" aria-label="Previous">
+		        <i class="fa fa-angle-left"></i>
 		      </a>
 		    </li>
 		    </c:if>
 		    <c:forEach var = "pageNum" begin = "${page.startPage }" end = "${page.endPage}">
-		    	<li><a href="?pageNum=${pageNum }">${pageNum }</a></li>
+		    	<li><a href="?pageNum=${pageNum }&type=${page.cri.type}&keyword=${page.cri.keyword}">${pageNum }</a></li>
 		    </c:forEach>
 		    <c:if test="${page.cri.pageNum != page.endPage}">
 		    <li>
-		      <a href="?pageNum=${page.cri.pageNum+1 }" aria-label="Next">
-		        <span class="material-symbols-outlined">keyboard_arrow_right</span>
+		      <a href="?pageNum=${page.cri.pageNum+1 }&type=${page.cri.type}&keyword=${page.cri.keyword}" aria-label="Next">
+		        <i class="fa fa-angle-right"></i>
 		      </a>
 		    </li>
 		    </c:if>
 		    <c:if test="${page.next}">
 		    <li>
-		      <a href="?pageNum=${page.realEnd }" aria-label="Next">
-		        <span class="material-symbols-outlined">keyboard_double_arrow_right</span>
+		      <a href="?pageNum=${page.realEnd }&type=${page.cri.type}&keyword=${page.cri.keyword}" aria-label="Next">
+		        <i class="fa  fa-angle-double-right"></i>
 		      </a>
 		    </li>
 		    </c:if>

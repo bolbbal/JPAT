@@ -18,7 +18,8 @@
 		            </div>
 		            <div class="col-md-9">
 		                <h3>${list.singer}</h3>
-		                <p>${list.suggest_count}</p>
+		                <br>
+		                <h3>お勧めされた数：${list.suggest_count}</h3>
 		            </div>
 		            <p class="singer-idx" style="display:none;">${list.singer_idx}</p>
 		        </a>
@@ -45,7 +46,7 @@
 		    </c:if>
 		    <c:if test="${page.cri.pageNum != 1 }">
 		    <li>
-		      <a href="?pageNum=${page.cri.pageNum-1 }&type=${page.cri.type}'&keyword=${page.cri.keyword}'" aria-label="Previous">
+		      <a href="?pageNum=${page.cri.pageNum-1 }&type=${page.cri.type}&keyword=${page.cri.keyword}" aria-label="Previous">
 		        <i class="fa fa-angle-left"></i>
 		      </a>
 		    </li>

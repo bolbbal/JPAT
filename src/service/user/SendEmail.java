@@ -66,8 +66,8 @@ public class SendEmail implements Action {
 			
 			msg.setFrom(new InternetAddress(user, "JPAT"));
 			msg.addRecipient(Message.RecipientType.TO, new InternetAddress(to_email));
-			msg.setSubject("JPAT에서 보낸 메일입니다.");
-			msg.setText("인증번호 : " + temp);
+			msg.setSubject("JPATから送信されたメールです。");
+			msg.setText("認証コード : " + temp);
 			
 			Transport.send(msg);
 		} catch (Exception e) {

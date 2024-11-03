@@ -111,7 +111,7 @@ public class ReplyDao {
 	
 	public List<ReplyVo> getReplyList(int post_idx) {
 		
-		String sql = "select /*+ index_desc reply (reply_pk)*/ * from reply where post_idx = ?";
+		String sql = "select * from reply where post_idx = ? order by reply_idx";
 		
 		List<ReplyVo> list = new ArrayList<ReplyVo>();
 		
@@ -130,9 +130,6 @@ public class ReplyDao {
 				vo.setReply_password(rs.getNString("reply_password"));
 				vo.setComments(rs.getNString("comments"));
 				vo.setRegdate(rs.getNString("regdate").substring(0,10));
-				if(rs.getNString("modifydate") != null) {
-					vo.setModifydate(rs.getNString("modifydate").substring(0,10));
-				}
 				vo.setReplyIdx(rs.getInt("reply_idx"));
 				int userIdx = rs.getInt("user_idx");
 				if(!rs.wasNull()) {

@@ -51,7 +51,7 @@
 		    </c:if>
 		    <c:if test="${page.cri.pageNum != 1 }">
 		    <li>
-		      <a href="?pageNum=${page.cri.pageNum-1 }&type=${page.cri.type}'&keyword=${page.cri.keyword}'" aria-label="Previous">
+		      <a href="?pageNum=${page.cri.pageNum-1 }&type=${page.cri.type}&keyword=${page.cri.keyword}" aria-label="Previous">
 		        <i class="fa fa-angle-left"></i>
 		      </a>
 		    </li>

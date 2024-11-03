@@ -4,7 +4,7 @@
     
 <!-- contents start -->
 <div class="container post-type">
-    <h3>書き</h3>
+    <h3>書き込み</h3>
 </div>
 <div class="container">
     <form name="post" method="post" enctype = "multipart/form-data" action="/posts/writepro.do" onsubmit="return check()">
@@ -58,13 +58,13 @@
             </tr>
             <tr id="extra-inputs-4" style="display: none;">
                 <th>Lyrics</th>
-                <td colspan="3"><textarea name="lyrics" class="recommend-info"></textarea></td>
+                <td colspan="3"><textarea name="lyrics" class="write-contents"></textarea></td>
             </tr>
         </table>
         <div class="form-group text-right">
             <div class="text-right">
                 <button type="button" class="btn btn-default" onClick="location.href='/posts/list.do';">キャンセル</button>
-                <button type="submit" class="btn btn-default">書き込み</button>
+                <button type="submit" class="btn btn-default">投稿</button>
             </div>
         </div>
     </form>

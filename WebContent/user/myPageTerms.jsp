@@ -17,7 +17,7 @@
 				  </div>
 				  <div class="form-group text-center">
 				    <div class="text-center">
-				      <button type="submit" id="submit" class="btn btn-default">登録</button>
+				      <button type="submit" id="submit" class="btn btn-default">確認</button>
 				    </div>
 				  </div>
 				
@@ -47,6 +47,7 @@
 						if(data.result == "success") {
 							location.href="/users/myPage.do";
 						} else if(data.result == "no") {
+							$("#passwordMsg").html("<span style='color:#f00;'>パスワ―ドを確認してください</span>");
 							return;
 						}
 					}, error:function() {

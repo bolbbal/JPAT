@@ -26,7 +26,7 @@
 				  <div class="form-group text-center">
 				    <div class="text-center">
 				      <button type="submit" id="submit" class="btn btn-default">ログイン</button>
-				      <button type="button" class="btn btn-default" onclick="location.href='/';">キャンセル</button>
+				      <button type="button" class="btn btn-default" onclick="location.href='/users/signup.do';">新規登録</button>
 				    </div>
 				  </div>
 				

@@ -43,9 +43,9 @@
     						<div class="search-bar">
 						      <select name="type" class="search-option" id="type" onchange="updateAction(this)">
 						        	<option value=""></option>
-						        	<option value="title" ${page.cri.type.equals('title')?'selected':'' }>제목</option>
-						        	<option value="singer" ${page.cri.type.equals('singer')?'selected':'' }>가수</option>
-						        	<option value="music" ${page.cri.type.equals('music')?'selected':'' }>노래</option>
+						        	<option value="title" ${page.cri.type.equals('title')?'selected':'' }>タイトル</option>
+						        	<option value="singer" ${page.cri.type.equals('singer')?'selected':'' }>歌手</option>
+						        	<option value="music" ${page.cri.type.equals('music')?'selected':'' }>曲名</option>
 						        </select>
 						      <input type="text" class="form-control" name="keyword" id="keyword" value="${page.cri.keyword}">
 						    <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
