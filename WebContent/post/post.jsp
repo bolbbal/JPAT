@@ -31,7 +31,7 @@
     			</tr>
     		</thead>
     		<tbody>
-    			<c:if test="${list.isEmpty() || list == null} ">
+    			<c:if test="${count == 0} ">
     				<tr>
     					<td colspan = "7">検索結果がありません</td>
     				</tr>
@@ -77,7 +77,7 @@
 		    <c:forEach var = "pageNum" begin = "${page.startPage }" end = "${page.endPage}">
 		    	<li><a href="?pageNum=${pageNum }&type=${page.cri.type}&keyword=${page.cri.keyword}">${pageNum }</a></li>
 		    </c:forEach>
-		    <c:if test="${page.cri.pageNum != page.endPage}">
+		    <c:if test="${(page.cri.pageNum != page.endPage) && !page.next}">
 		    <li>
 		      <a href="?pageNum=${page.cri.pageNum+1 }&type=${page.cri.type}&keyword=${page.cri.keyword}" aria-label="Next">
 		        <i class="fa fa-angle-right"></i>

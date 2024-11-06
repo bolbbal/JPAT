@@ -40,6 +40,7 @@
     				
     				<div class = "col-md-6 site-search text-center">
     					<form class="navbar-form" role="search" name="site-search" method="get" action="/posts/list.do" onsubmit="return check();">
+    					<input type="hidden" name="pageNum" id="pageNum" value="1">
     						<div class="search-bar">
 						      <select name="type" class="search-option" id="type" onchange="updateAction(this)">
 						        	<option value=""></option>
@@ -84,7 +85,7 @@
 			    <!-- Collect the nav links, forms, and other content for toggling -->
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="float: left; justify-content: flex-start;">
 			      <ul class="nav navbar-nav">
-			        <li><a href="/posts/list.do">新着 <span class="sr-only">(current)</span></a></li>
+			        <li><a href="/posts/list.do?pageNum=1">新着 <span class="sr-only">(current)</span></a></li>
 			        <li><a href="/posts/best.do">人気</a></li>
 			        <li><a href="/posts/suggest.do">お勧め</a></li>
 			        <li><a href="/posts/singer.do">歌手</a></li>
@@ -120,9 +121,5 @@
     		return true;
     		
     	}
-    	
-    	function updateAction(selectElement) {
-            
-        }
     </script>
     

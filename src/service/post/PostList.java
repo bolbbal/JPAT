@@ -58,7 +58,9 @@ public class PostList implements Action {
 		cri.setType(type);
 		cri.setKeyword(keyword);
 		
-		List<PostVo> list = PostDao.getInstance().getPostList(cri, query);
+		List<PostVo> list = null;
+		
+		list = PostDao.getInstance().getPostList(cri, query);
 		
 		int count = PostDao.getInstance().getPostCount(query);
 		
