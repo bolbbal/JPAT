@@ -26,7 +26,7 @@
 		        <c:if test="${user.userIdx == 1}">
 		            <input type="file" class="imgInsert" data-singer-idx="${list.singer_idx}">
 		            <br>
-		            <button type="button" class="submit" data-singer-idx="${list.singer_idx}">저장</button>
+		            <button type="button" class="submit" data-singer-idx="${list.singer_idx}">保存</button>
 		        </c:if>
 		    </div>
 		</c:forEach>
